@@ -1,0 +1,39 @@
+.listings-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 360px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input:focus { border-color: var(--primary); }
+
+.count-badge {
+  background: var(--bg);
+  border: 1px solid var(--light-gray);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.listings-table .table-property { min-width: 200px; }
+.prop-title { display: block; font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.prop-guests { display: block; font-size: 12px; color: var(--gray); }
+
+.table-skeleton { display: flex; flex-direction: column; gap: 12px; }
+.skeleton-row { background: #f0f0f0; border-radius: 6px; animation: shimmer 1.5s infinite; }
+.empty-state { text-align: center; padding: 40px; color: var(--gray); }
+.empty-state a { color: var(--primary); font-weight: 600; }

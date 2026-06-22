@@ -1,0 +1,59 @@
+.reservations-page { padding: 48px 24px; min-height: calc(100vh - 73px); }
+.reservations-page h1 { font-family: var(--font-display); font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+.res-sub { color: var(--gray); margin-bottom: 36px; font-size: 16px; }
+.res-loading { display: flex; flex-direction: column; gap: 16px; }
+
+.no-reservations { text-align: center; padding: 80px 24px; }
+.no-reservations h2 { font-size: 24px; margin-bottom: 8px; }
+.no-reservations p { color: var(--gray); }
+
+.reservations-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+}
+
+.reservations-table th {
+  background: var(--bg-light);
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gray);
+  border-bottom: 1px solid var(--light-gray);
+  white-space: nowrap;
+}
+
+.reservations-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--light-gray);
+  color: var(--dark);
+  vertical-align: middle;
+}
+.reservations-table tr:last-child td { border-bottom: none; }
+.reservations-table tr:hover td { background: var(--bg-light); }
+
+.res-property { display: flex; align-items: center; gap: 12px; min-width: 180px; }
+.res-img { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.status-confirmed { background: #E8F5E9; color: #2E7D32; }
+.status-pending { background: #FFF8E1; color: #F57F17; }
+.status-cancelled { background: #FDECEA; color: #C62828; }
+
+.cancel-btn { padding: 6px 14px !important; font-size: 13px !important; }
+.cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.error-msg { background: #FFF0F3; color: var(--primary); padding: 16px 20px; border-radius: var(--radius); border: 1px solid #FFD0DC; font-weight: 500; }

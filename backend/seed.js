@@ -97,6 +97,20 @@ const seed = async () => {
       enhancedCleaning: true, selfCheckIn: false,
       specificRatings: { cleanliness: 5.0, communication: 4.9, checkIn: 4.8, accuracy: 4.9, location: 4.9, value: 4.8 },
     },
+    {
+      title: 'Modern Apartment in San Francisco',
+      location: 'San Francisco',
+      description: 'Stay in the heart of San Francisco in this stunning modern apartment with views of the skyline. Walking distance to Golden Gate Park.',
+      type: 'Entire apartment',
+      bedrooms: 2, bathrooms: 2, guests: 4,
+      price: 320, rating: 4.5, reviews: 320,
+      amenities: ['wifi', 'kitchen', 'free parking', 'air conditioning', 'washer'],
+      images: ['https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800'],
+      weeklyDiscount: 10, cleaningFee: 50, serviceFee: 50, occupancyTaxes: 30,
+      host: host._id, hostName: host.username,
+      enhancedCleaning: true, selfCheckIn: true,
+      specificRatings: { cleanliness: 4.8, communication: 4.7, checkIn: 4.9, accuracy: 4.6, location: 4.9, value: 4.5 },
+    }
   ]);
 
   console.log('Accommodations created');

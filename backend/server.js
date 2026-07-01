@@ -4,16 +4,6 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 
-app.get("/",function(req,res){
-  res.sendFile(
-  path.join(__dirname,"../frontend/dist/index.html"),
-  function(err){
-    if(err){
-      res.status(500).send(err);
-    }
-  }
-)});
-
 dotenv.config();
 const app = express();
 
@@ -30,6 +20,15 @@ app.use('/api/accommodations', require('./routes/accommodationRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/reservations', require('./routes/reservationRoutes'));
 
+app.get("/",function(req,res){
+  res.sendFile(
+  path.join(__dirname,"../frontend/dist/index.html"),
+  function(err){
+    if(err){
+      res.status(500).send(err);
+    }
+  }
+)});
 // Health check
 app.get('/', (req, res) => {
   res.json({ message: 'Airbnb Clone API is running' });

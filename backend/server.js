@@ -4,15 +4,15 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 
-// Serve static files from the frontend build folder
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
-
-  // Handle any requests that don't match the ones above
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-  });
-}
+app.get("/",function(req,res){
+  res.sendFile(
+  path.join(__dirname,"../frontend/dist/index.html"),
+  function(err){
+    if(err){
+      res.status(500).send(err);
+    }
+  }
+)});
 
 dotenv.config();
 const app = express();

@@ -6,7 +6,6 @@
   "scripts": {
     "start-frontend": "react-scripts start",
     "dev": "vite",
-    "build": "(cd ../backend && npm install)",
     "lint": "eslint .",
     "preview": "vite preview"
   },

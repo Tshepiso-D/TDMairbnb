@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start-admin": "react-scripts start",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && (cd ../backend && npm run build)",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -20,11 +20,6 @@ app.use('/api/accommodations', require('./routes/accommodationRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/reservations', require('./routes/reservationRoutes'));
 
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-});
 // Health check
 app.get('/', (req, res) => {
   res.json({ message: 'Airbnb Clone API is running' });

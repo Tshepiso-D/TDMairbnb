@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com/',
+        target: 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com',
         changeOrigin: true,
       },
     },

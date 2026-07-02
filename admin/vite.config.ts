@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       // String shorthand: forward http://localhost:5173/api -> http://localhost:5000/api
-      '/api': 'http://localhost:5000', // Replace 5000 with your actual backend port
+      '/api': 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com', // Replace 5000 with your actual backend port
     },
   },
 })

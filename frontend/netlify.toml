@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "build"          # or "dist" if you use Vite
+  publish = "dist"          # or "dist" if you use Vite
 
 [[headers]]
   for = "*.js"

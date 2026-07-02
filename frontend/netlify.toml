@@ -1,0 +1,24 @@
+[build]
+  command = "npm run build"
+  publish = "build"          # or "dist" if you use Vite
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+# Also add the SPA redirect while you're at it
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext();
+const API_URL = 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -18,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const { data } = await axios.post('/api/users/login', { email, password });
+    const { data } = await axios.post(`${API_URL}/api/users/login`, { email, password });
     setUser(data);
     localStorage.setItem('airbnb_user', JSON.stringify(data));
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
@@ -26,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (username, email, password) => {
-    const { data } = await axios.post('/api/users/register', { username, email, password });
+    const { data } = await axios.post(`${API_URL}/api/users/register`, { username, email, password });
     setUser(data);
     localStorage.setItem('airbnb_user', JSON.stringify(data));
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;

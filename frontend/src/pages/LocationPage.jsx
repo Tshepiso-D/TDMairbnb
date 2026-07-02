@@ -22,7 +22,7 @@ export default function LocationPage() {
     maxPrice: '',
     guests: ''
   });
-
+const API_URL = 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com';
   const fetchListings = async (currentFilter = filter) => {
     setLoading(true);
     setError('');
@@ -34,7 +34,7 @@ export default function LocationPage() {
       if (currentFilter.maxPrice !== '') params.maxPrice = currentFilter.maxPrice;
       if (currentFilter.guests !== '') params.guests = currentFilter.guests;
 
-    const { data } = await axios.get('/api/accommodations', { params });
+    const { data } = await axios.get(`${API_URL}/api/accommodations`, { params });
     setListings(Array.isArray(data) ? data : data?.data || []);
     console.log('response data:',  data , Array.isArray(data));
     } catch (err) {

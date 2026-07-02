@@ -108,7 +108,7 @@
 .become-host-link {
   font-size: 14px;
   font-weight: 600;
-  color: var(--dark);
+  color: white;
   padding: 8px 12px;
   border-radius: 22px;
   transition: background 0.2s;

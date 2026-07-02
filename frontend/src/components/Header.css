@@ -103,7 +103,7 @@
   gap: 16px;
   position: relative;
   flex-shrink: 0;
-  background:#EBEBEB}
+  }
 
 .become-host-link {
   font-size: 14px;
@@ -112,6 +112,7 @@
   padding: 8px 12px;
   border-radius: 22px;
   transition: background 0.2s;
+  background:#EBEBEB
 }
 .become-host-link:hover { background: #F7F7F7; }
 

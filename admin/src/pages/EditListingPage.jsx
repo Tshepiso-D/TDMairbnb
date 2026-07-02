@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ListingForm from '../components/ListingForm';
 
+const API_URL = 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com';
+
 export default function EditListingPage() {
   const { id } = useParams();
   const [listing, setListing] = useState(null);
@@ -12,7 +14,7 @@ export default function EditListingPage() {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const { data } = await axios.get(`/api/accommodations/${id}`);
+        const { data } = await axios.get(`${API_URL}/api/accommodations/${id}`);
         setListing(data);
       } catch {
         setError('Failed to load listing. It may have been deleted.');
@@ -24,9 +26,7 @@ export default function EditListingPage() {
   }, [id]);
 
   const handleSubmit = async (formData) => {
-    await axios.put(`/api/accommodations/${id}`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
+    await axios.put(`${API_URL}/api/accommodations/${id}`, formData);
   };
 
   if (loading) return <div style={{ padding: 48, textAlign: 'center', color: 'var(--gray)' }}>Loading listing...</div>;

@@ -2,7 +2,8 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext();
-
+const API_URL = 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com';
+axios.defaults.baseURL = API_URL;
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const { data } = await axios.post('/api/users/login', { email, password });
+    const { data } = await axios.post(`${API_URL}/api/users/login`, { email, password });
     if (data.role !== 'admin' && data.role !== 'host') {
       throw new Error('Access denied. Admin or Host accounts only.');
     }

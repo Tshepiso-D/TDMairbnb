@@ -9,10 +9,10 @@ export default function ReservationsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [cancelling, setCancelling] = useState(null);
-
+  const API_URL = 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com';
   const fetchReservations = async () => {
     try {
-      const { data } = await axios.get('/api/reservations/user');
+      const { data } = await axios.get(`${API_URL}/api/reservations/user`);
       setReservations(data);
     } catch {
       setError('Failed to load reservations.');
@@ -27,7 +27,7 @@ export default function ReservationsPage() {
     if (!window.confirm('Are you sure you want to cancel this reservation?')) return;
     setCancelling(id);
     try {
-      await axios.delete(`/api/reservations/${id}`);
+      await axios.delete(`${API_URL}/api/reservations/${id}`);
       setReservations(reservations.filter((r) => r._id !== id));
     } catch {
       alert('Failed to cancel reservation. Please try again.');

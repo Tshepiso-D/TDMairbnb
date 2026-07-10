@@ -28,11 +28,11 @@ export default function LocationDetailsPage() {
   const [reserving, setReserving] = useState(false);
   const [reserveSuccess, setReserveSuccess] = useState(false);
   const [reserveError, setReserveError] = useState('');
-
+  const API_URL = 'https://zaio-assignment-tdmairbnb-d989e8ad01ac.herokuapp.com';
   useEffect(() => {
     const fetch = async () => {
       try {
-        const { data } = await axios.get(`/api/accommodations/${id}`);
+        const { data } = await axios.get(`${API_URL}/api/accommodations/${id}`);
         setListing(data);
         setGuests(1);
       } catch {
@@ -70,7 +70,7 @@ export default function LocationDetailsPage() {
     setReserving(true);
     setReserveError('');
     try {
-      await axios.post('/api/reservations', {
+      await axios.post(`${API_URL}/api/reservations`, {
         accommodationId: id,
         checkIn,
         checkOut,
